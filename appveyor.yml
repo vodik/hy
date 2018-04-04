@@ -1,0 +1,18 @@
+environment:
+  matrix:
+  - TOXENV: "2.7"
+  - TOXENV: "3.4"
+  - TOXENV: "3.5"
+  - TOXENV: "3.6"
+  - TOXENV: pypy
+  - TOXENV: pypy3
+
+install:
+  - echo Installed Pythons
+  - dir c:\Python*
+  - C:\Python36\python -m pip install --upgrade --pre tox
+
+build: false
+
+test_script:
+  - C:\Python36\python -m tox
