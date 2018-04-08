@@ -1,5 +1,9 @@
 sudo: false
 language: python
+os:
+  - linux
+  - osx
+
 python:
   - "2.7"
   - "3.4"
@@ -11,6 +15,7 @@ python:
 install:
   - pip install -r requirements-travis.txt
   - pip install --process-dependency-links -e .
+
 script: pytest
 cache: pip
 after_success: make coveralls
